@@ -54,5 +54,10 @@ public class BookController {
 		bookService.deleteBook(id);
 		return "redirect:/available_books";
 	}
+	
+	@GetMapping("/cancel")
+	public String onCancel() {
+		return "redirect:/available_books";
+	}
 
 }
