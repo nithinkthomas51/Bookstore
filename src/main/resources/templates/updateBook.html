@@ -55,7 +55,8 @@
 					type="text" class="form-control" name="price" th:value="${book.price}">
 			</div>
 			<div class="text-center">
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" class="btn btn-primary mx-4">Submit</button>
+				<a th:href="@{/cancel}" class="btn btn-secondary mx-4">Cancel</a>
 			</div>
 		</form>
 	</div>
