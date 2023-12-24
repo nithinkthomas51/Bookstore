@@ -20,6 +20,11 @@ public class BookController {
 		return "home";
 	}
 	
+	/*
+	 * This will return the UI for adding a new book to the store
+	 * User needs to provide the name, author and price of the
+	 * book and then click on submit.
+	 */
 	@GetMapping("/book_register")
 	public String bookRegister() {
 		return "bookRegister";
