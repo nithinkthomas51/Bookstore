@@ -1,10 +1,10 @@
-package com.library.management;
+package com.bookstore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LibraryManagementApplicationTests {
+class BookStoreApplicationTests {
 
 	@Test
 	void contextLoads() {
