@@ -29,5 +29,9 @@ public class BookService {
 	public void deleteBook(int id) {
 		bookRepo.deleteById(id);
 	}
+	
+	public List<Book> findByCategory(String category) {
+		return bookRepo.findAllByCategory(category);
+	}
 
 }

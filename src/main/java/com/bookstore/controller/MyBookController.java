@@ -30,7 +30,7 @@ public class MyBookController {
 	@RequestMapping("/mylist/{id}")
 	public String addToMyBook(@PathVariable("id") int id) {
 		Book book = bookService.findById(id);
-		MyBookLists myBook = new MyBookLists(book.getId(), book.getName(), book.getAuthor(), book.getPrice());
+		MyBookLists myBook = new MyBookLists(book.getId(), book.getName(), book.getAuthor(), book.getPrice(), book.getCategory());
 		myBookService.save(myBook);
 		return "redirect:/my_book";
 	}
