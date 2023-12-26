@@ -42,7 +42,7 @@ public class BookController {
 		return "redirect:/available_books";
 	}
 	
-	@GetMapping("/available_book/update/{id}")
+	@GetMapping("/available_books/update/{id}")
 	public String updateBook(@PathVariable("id") int id, Model model) {
 		Book book = bookService.findById(id);
 		model.addAttribute("book", book);
@@ -58,6 +58,12 @@ public class BookController {
 	@GetMapping("/cancel")
 	public String onCancel() {
 		return "redirect:/available_books";
+	}
+	
+	@GetMapping("/available_books/{category}")
+	public ModelAndView getBooksCategoryWise(@PathVariable("category") String category) {
+		ModelAndView m = new ModelAndView("availableBooks", "book", bookService.findByCategory(category));
+		return m;
 	}
 
 }

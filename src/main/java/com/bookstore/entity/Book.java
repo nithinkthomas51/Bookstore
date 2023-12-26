@@ -12,12 +12,14 @@ public class Book {
 	private String name;
 	private String author;
 	private String price;
-	public Book(int id, String name, String author, String price) {
+	private String category;
+	public Book(int id, String name, String author, String price, String category) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.author = author;
 		this.price = price;
+		this.category = category;
 	}
 	public Book() {
 		super();
@@ -47,8 +49,15 @@ public class Book {
 	public void setPrice(String price) {
 		this.price = price;
 	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", name=" + name + ", author=" + author + ", price=" + price + "]";
+		return "Book [id=" + id + ", name=" + name + ", author=" + author + ", price=" + price + ", category="
+				+ category + "]";
 	}
 }
