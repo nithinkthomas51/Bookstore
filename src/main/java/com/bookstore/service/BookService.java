@@ -18,8 +18,12 @@ public class BookService {
 		bookRepo.save(b);
 	}
 	
-	public List<Book> getAllBooks() {
-		return bookRepo.findAll();
+	public List<Book> getAllBooks(String category) {
+		if (category.equals("All")) {
+			return bookRepo.findAll();
+		} else {
+			return bookRepo.findAllByCategory(category);
+		}
 	}
 	
 	public Book findById(int id) {
