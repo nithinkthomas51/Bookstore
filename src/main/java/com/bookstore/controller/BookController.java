@@ -31,8 +31,10 @@ public class BookController {
 	}
 	
 	@GetMapping("/available_books")
-	public ModelAndView availableBooks() {
-		ModelAndView m = new ModelAndView("availableBooks", "book", bookService.getAllBooks());
+	public ModelAndView availableBooks(@RequestParam(value = "category", defaultValue = "All") String category) {
+		ModelAndView m = new ModelAndView("availableBooks");
+		m.addObject("book", bookService.getAllBooks(category));
+		m.addObject("selectedCategory", category);
 		return m;
 	}
 	
@@ -63,6 +65,7 @@ public class BookController {
 	@GetMapping("/available_books/{category}")
 	public ModelAndView getBooksCategoryWise(@PathVariable("category") String category) {
 		ModelAndView m = new ModelAndView("availableBooks", "book", bookService.findByCategory(category));
+		m.addObject("selectedCategory", category);
 		return m;
 	}
 
