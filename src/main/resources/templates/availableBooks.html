@@ -44,12 +44,12 @@
 				<label for="category" class="col-sm-2 col-form-label">Category</label>
 				<div class="col-sm-6 d-flex align-items-center">
 					<select class="form-select form-control me-3" name="category" id="category">
-						<option th:value="${selectedCategory}" th:text="${selectedCategory}" th:selected=true></option>
 						<option>All</option>
 						<option
 							th:each="category : ${T(com.bookstore.entity.Categories).getDisplayNames()}"
 							th:value="${category}" 
-							th:text="${category}">
+							th:text="${category}"
+							th:selected="${selectedCategory == category ? true : false}">
 						</option>
 					</select>
 				</div>

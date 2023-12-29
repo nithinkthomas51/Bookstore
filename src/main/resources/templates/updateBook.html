@@ -58,10 +58,12 @@
 				<label for="category" class="form-label">Category </label>
 				<select class="form-select mb-3"
 					aria-label=".form-select-lg" name="category">
-					<option th:value="${book.category}" th:text="${book.category}" th:selected=true></option>
 					<option
 							th:each="category : ${T(com.bookstore.entity.Categories).getDisplayNames()}"
-							th:value="${category}" th:text="${category}"></option>
+							th:value="${category}" 
+							th:text="${category}"
+							th:selected="${book.category == category ? true : false}">
+					</option>
 					<option value="Other">Other</option>
 				</select>
 			</div>
